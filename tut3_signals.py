@@ -30,7 +30,7 @@ class MainWindow(QMainWindow):
         # title is changed. The new title is passed to the function
         # and replaces the default parameter. Extra data is passed from
         # within the lambda.
-        # self.windowTitleChanged.connect(lambda x: self.my_custom_fn(x, 25))
+        self.windowTitleChanged.connect(lambda x: self.my_custom_fn(x, 25))
 
         # This sets the window title which will trigger all the above signals
         # sending the new title to the attached functions or lambdas as the
@@ -51,6 +51,10 @@ class MainWindow(QMainWindow):
     def my_custom_fn(self, a="HELLLO!", b=5):
 
         print(a, b)
+
+    def contextMenuEvent(self, event):
+        print("Context menu event!")
+        super(MainWindow, self).contextMenuEvent(event)
 
 
 app = QApplication(sys.argv)
