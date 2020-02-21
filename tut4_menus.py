@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
         button_action = QAction(QIcon('terminal.gif'),
                                 'Terminal Launcher', self)
         button_action.setStatusTip('Terminal')
-        button_action.triggered.connect(self.onMyToolBarClick('terminal'))
+        button_action.triggered.connect(self.onMyToolBarClick())
         button_action.setCheckable(True)
         toolbar.addAction(button_action)
         # ---------- Raccorci clavier
